@@ -1,0 +1,4 @@
+[
+  {"id": 9001, "client_id": 501, "tickettype_id": 101, "summary": "Payment Decline: Acme Test Co (1 declines)"},
+  {"id": 9002, "client_id": 501, "tickettype_id": 55, "summary": "Other open ticket"}
+]

@@ -1,0 +1,40 @@
+{
+  "1001": [
+    {
+      "id": "txn-1",
+      "transactionDate": "2026-10-20",
+      "amount": 100.0,
+      "currency": "USD",
+      "invoiceNumber": "INV-1001",
+      "invoiceId": "inv-acme-aged",
+      "result": "DECLINED",
+      "customerName": "Acme Test Co",
+      "details": {"message": "Insufficient funds"}
+    },
+    {
+      "id": "txn-2",
+      "transactionDate": "2026-10-18",
+      "amount": 10.0,
+      "currency": "USD",
+      "invoiceNumber": "INV-1000",
+      "invoiceId": "inv-acme-older",
+      "result": "DECLINED",
+      "customerName": "Acme Test Co",
+      "details": {}
+    }
+  ],
+  "1002": [
+    {
+      "id": "txn-young",
+      "transactionDate": "2026-10-28",
+      "amount": 50.0,
+      "currency": "USD",
+      "invoiceNumber": "INV-2001",
+      "invoiceId": "inv-nine-days",
+      "result": "DO NOT HONOR",
+      "customerName": "Northwind Test",
+      "details": {"message": null}
+    }
+  ],
+  "many": []
+}

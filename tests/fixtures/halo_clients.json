@@ -1,0 +1,34 @@
+[
+  {
+    "id": 501,
+    "name": "Acme Test Co",
+    "customfields": [
+      {"name": "accountsid", "value": "1001"},
+      {"name": "CFCreditHold", "value": false}
+    ]
+  },
+  {
+    "id": 502,
+    "name": "Fallback Field Co",
+    "customfields": [
+      {"name": "BenjiCustomerId", "value": "2002"}
+    ]
+  },
+  {
+    "id": 503,
+    "name": "Name Only Co",
+    "customfields": []
+  },
+  {
+    "id": 504,
+    "name": "Case Field Co",
+    "customfields": [
+      {"name": "AccountsID", "value": "3003"}
+    ]
+  },
+  {
+    "id": 505,
+    "name": "Top Level Co",
+    "accountsid": "4004"
+  }
+]

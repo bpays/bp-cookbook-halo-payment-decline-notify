@@ -1,0 +1,82 @@
+[
+  {
+    "id": "inv-acme-aged",
+    "invoiceNumber": "INV-1001",
+    "dueDate": "2026-10-21",
+    "balance": 100.0,
+    "currency": "USD",
+    "status": "overdue",
+    "customer": {"id": "1001", "name": "Acme Test Co", "active": true}
+  },
+  {
+    "id": "inv-acme-older",
+    "invoiceNumber": "INV-1000",
+    "dueDate": "2026-01-15",
+    "balance": 10.0,
+    "currency": "USD",
+    "status": "overdue",
+    "customer": {"id": "1001", "name": "Acme Test Co", "active": true}
+  },
+  {
+    "id": "inv-nine-days",
+    "invoiceNumber": "INV-2001",
+    "dueDate": "2026-10-22",
+    "balance": 50.0,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1002", "name": "Northwind Test", "active": true}
+  },
+  {
+    "id": "inv-zero-balance",
+    "invoiceNumber": "INV-3001",
+    "dueDate": "2026-09-01",
+    "balance": 0,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1003", "name": "Zero Balance Co", "active": true}
+  },
+  {
+    "id": "inv-null-balance",
+    "invoiceNumber": "INV-3002",
+    "dueDate": "2026-08-01",
+    "balance": null,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1003", "name": "Zero Balance Co", "active": true}
+  },
+  {
+    "id": "inv-missing-due",
+    "invoiceNumber": "INV-4001",
+    "dueDate": null,
+    "balance": 80.0,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1004", "name": "Missing Due Co", "active": true}
+  },
+  {
+    "id": "inv-bad-due",
+    "invoiceNumber": "INV-5001",
+    "dueDate": "not-a-date",
+    "balance": 80.0,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1005", "name": "Bad Date Co", "active": true}
+  },
+  {
+    "id": "inv-future",
+    "invoiceNumber": "INV-6001",
+    "dueDate": "2026-12-01",
+    "balance": 40.0,
+    "currency": "USD",
+    "status": "open",
+    "customer": {"id": "1006", "name": "Future Due Co", "active": true}
+  },
+  {
+    "id": "inv-no-customer",
+    "invoiceNumber": "INV-7001",
+    "dueDate": "2026-01-01",
+    "balance": 99.0,
+    "currency": "USD",
+    "status": "overdue"
+  }
+]
