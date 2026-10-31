@@ -36,7 +36,7 @@ flowchart TD
   create --> hold["Optional: set CFCreditHold"]
 ```
 
-The script calls Benji Pays and Halo directly. It does not start a Halo runbook. Halo Custom Integration methods are optional packaging. Read the limit in [docs/halo-integration/README.md](docs/halo-integration/README.md) before you rely on a runbook condition.
+The diagram is the cookbook script. It calls Benji Pays and Halo directly. It does not start a Halo runbook. The same policy can also be run by an agent, or shown as a finished Halo Integration Runbook. This script is the reliable sample. The webinar outline is [DEMO.md](DEMO.md). If you use a Halo runbook, read the limit in [docs/halo-integration/README.md](docs/halo-integration/README.md) before you rely on a runbook condition.
 
 ## Prerequisites
 
@@ -124,7 +124,9 @@ Keep `.env` off the git remote. Use a Benji Pays key that can read invoices and 
 
 ## Halo runbooks
 
-Optional. A Halo Integration Runbook condition on a mapped list count is not a reliable gate. Use this script for the policy. Details: [docs/halo-integration/README.md](docs/halo-integration/README.md).
+This script is the reliable sample. An agent, or a finished Halo Integration Runbook, can follow the same policy. The webinar outline is [DEMO.md](DEMO.md).
+
+A Halo Integration Runbook condition on a mapped list count is not a reliable gate. Do not use it to decide from a decline count or an open ticket count. Optional method notes: [docs/halo-integration/README.md](docs/halo-integration/README.md). This repo does not claim a one-click import that works on every tenant.
 
 ## Tests
 
