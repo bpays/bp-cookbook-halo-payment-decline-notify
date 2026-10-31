@@ -1,0 +1,47 @@
+{
+  "name": "Benji Pays",
+  "baseUrl": "PASTE_BENJI_PAYS_API_URL",
+  "auth": {
+    "type": "apiKeyHeader",
+    "headerName": "x-api-key",
+    "credential": "PASTE_IN_HALO_UI"
+  },
+  "note": "Illustrative only. Halo import shapes differ by version. Recreate the methods in the UI if import fails. Paste the API key in Halo after import. Do not commit a key. Set baseUrl to the BENJI_PAYS_API_URL value from .env.example.",
+  "methods": [
+    {
+      "name": "ListOpenInvoicesByCustomer",
+      "method": "GET",
+      "path": "/v2/invoices",
+      "query": {
+        "status": "open",
+        "customerId": "{{accountingCustomerId}}",
+        "limit": "1000",
+        "sort": "dueDate",
+        "order": "asc"
+      }
+    },
+    {
+      "name": "ListOpenInvoicesOrg",
+      "method": "GET",
+      "path": "/v2/invoices",
+      "query": {
+        "status": "open",
+        "limit": "1000",
+        "sort": "dueDate",
+        "order": "asc"
+      }
+    },
+    {
+      "name": "ListDeclinedTransactionsByCustomer",
+      "method": "GET",
+      "path": "/v2/transactions",
+      "query": {
+        "status": "declined",
+        "customerId": "{{accountingCustomerId}}",
+        "limit": "1000",
+        "sort": "transactionDate",
+        "order": "desc"
+      }
+    }
+  ]
+}
