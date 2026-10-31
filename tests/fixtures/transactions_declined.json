@@ -35,6 +35,5 @@
       "customerName": "Northwind Test",
       "details": {"message": null}
     }
-  ],
-  "many": []
+  ]
 }

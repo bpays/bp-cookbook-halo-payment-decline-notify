@@ -56,7 +56,48 @@ def test_defaults_when_optional_settings_are_unset():
     assert "BenjiCustomerId" in settings.client_match_fallbacks
 
 
+def test_dotenv_strips_inline_comment(tmp_path):
+    env_file = tmp_path / ".env"
+    env_file.write_text(
+        "HALO_TENANT=acme  # pragma: allowlist secret\n",
+        encoding="utf-8",
+    )
+    env: dict[str, str] = {}
+    load_dotenv(env_file, env)
+    assert env["HALO_TENANT"] == "acme"
+
+
 def test_blank_required_value_counts_as_missing():
     env = dict(REQUIRED_OK)
     env["HALO_CLIENT_SECRET"] = "   "
     assert "HALO_CLIENT_SECRET" in missing_setting_names(env)
+
+
+def test_main_missing_settings_exits_2(monkeypatch, capsys, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    for key in (
+        "BENJI_PAYS_API_KEY",
+        "BENJI_PAYS_API_URL",
+        "BENJI_PAYS_APP_URL",
+        "HALO_RESOURCE_URL",
+        "HALO_AUTH_URL",
+        "HALO_CLIENT_ID",
+        "HALO_CLIENT_SECRET",
+        "HALO_TENANT",
+        "HALO_SCOPE",
+        "HALO_PAYMENT_DECLINE_TICKET_TYPE",
+        "HALO_PAYMENT_DECLINE_TICKET_TYPE_ID",
+        "HALO_CREDIT_HOLD_FIELD",
+        "HALO_CLIENT_MATCH_FIELD",
+        "HALO_CLIENT_MATCH_FALLBACKS",
+        "TIMEZONE",
+    ):
+        monkeypatch.delenv(key, raising=False)
+    from decline_notify.cli import main
+
+    code = main(["--all"])
+    captured = capsys.readouterr()
+    assert code == 2
+    assert "BENJI_PAYS_API_KEY" in captured.err
+    assert "HALO_CLIENT_SECRET" in captured.err
+    assert "planted" not in captured.err
